@@ -29,6 +29,9 @@ const I18N = {
     privacy: "Privacy Policy",
     terms: "Terms and Conditions",
     all_rights: "ALL RIGHTS RESERVED"
+    form_sending: "Sending…",
+    form_success: "Thanks! Your message has been sent.",
+    form_error: "Sorry, something went wrong. Please try again or email us directly."
   },
   fr: {
     nav_about: "À propos",
@@ -59,5 +62,8 @@ const I18N = {
     privacy: "Politique de confidentialité",
     terms: "Termes et conditions",
     all_rights: "TOUS DROITS RÉSERVÉS"
+    form_sending: "Envoi…",
+    form_success: "Merci ! Votre message a été envoyé.",
+    form_error: "Désolé, une erreur s’est produite. Réessayez ou écrivez-nous directement."
   }
 };
