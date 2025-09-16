@@ -88,6 +88,10 @@ input, textarea{
 }
 .btn:hover{filter:brightness(.95)}
 .form-note{color:var(--muted); font-size:14px; margin-top:8px}
+}
+.hp { display:none !important; }
+<input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+}
 
 /* ====== Map ====== */
 .map{padding-bottom:64px}
