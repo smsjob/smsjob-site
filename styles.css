@@ -1,12 +1,12 @@
 /* ====== Base ====== */
 :root{
-  --brand: #d9b45b;      /* gold-ish */
-  --text: #161616;
-  --muted: #666;
-  --line: #e8e8e8;
-  --accent: #68c3a3;     /* green underline */
-  --bg: #ffffff;
-  --btn: #f0c419;        /* yellow button */
+  --brand:#d9b45b;      /* gold-ish */
+  --text:#161616;
+  --muted:#666;
+  --line:#e8e8e8;
+  --accent:#68c3a3;     /* green underline */
+  --bg:#ffffff;
+  --btn:#f0c419;        /* yellow button */
 }
 
 *{box-sizing:border-box}
@@ -88,10 +88,12 @@ input, textarea{
 }
 .btn:hover{filter:brightness(.95)}
 .form-note{color:var(--muted); font-size:14px; margin-top:8px}
-}
-.hp { display:none !important; }
-<input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-}
+
+/* form helpers */
+.status{margin-top:10px; font-weight:600}
+.status.ok{color:#2e7d32}
+.status.err{color:#c62828}
+.hp{display:none !important}
 
 /* ====== Map ====== */
 .map{padding-bottom:64px}
@@ -110,3 +112,4 @@ input, textarea{
   .hero-text h1{font-size:36px}
   .section-title{font-size:36px}
 }
+
