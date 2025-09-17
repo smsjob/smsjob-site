@@ -1,4 +1,4 @@
-// Simple i18n dictionary and helpers
+ // Simple i18n dictionary and helpers
 const I18N = {
   en: {
     nav_about: "About Us",
@@ -37,7 +37,7 @@ const I18N = {
     nav_about: "À propos",
     nav_contact: "Contact",
     about_h1: "SMS Job Inc.",
-    about_p1: "SMSJob a fait partie de l’accélérateur X1 de l’Université McGill. Nous offrons des solutions basées sur les SMS.",
+    about_p1: "SMSJob a fait partie de l’accélérateur X1 de l’Université McGill. Nous proposons des solutions de recrutement.",
     about_p2: "Nous aidons les entreprises à trouver des travailleurs et à les retenir. Nous sommes situés à Montréal, Canada.",
     about_ceo_name: "Amine Arezki",
     about_ceo_title: "Fondateur",
