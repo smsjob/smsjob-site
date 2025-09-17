@@ -1,14 +1,17 @@
- // Simple i18n dictionary and helpers
+// lang.js
 const I18N = {
   en: {
     nav_about: "About Us",
     nav_contact: "Contact Us",
+
     about_h1: "SMS Job Inc.",
-    about_p1: "SMSJob was part of X1 McGill University Accelerator. We offer SMS based solutions.",
+    about_p1: "SMSJob was part of X1 McGill University Accelerator. We offer recruitment solutions.",
     about_p2: "We help businesses recruit and retain workers. We're located in Montréal, Canada.",
     about_ceo_name: "Amine Arezki",
     about_ceo_title: "Founder/CEO",
+
     partners_title: "Our Partners",
+
     contact_h1: "Contact info",
     addr_line1: "SMS Job Inc.",
     addr_line2: "4388 Saint-Denis #200",
@@ -16,6 +19,7 @@ const I18N = {
     mon_fri: "Mon - Fri",
     sat_sun: "Sat - Sun",
     closed: "Closed",
+
     label_name: "Name",
     label_phone: "Phone",
     label_email: "Email",
@@ -24,31 +28,36 @@ const I18N = {
     ph_phone: "Phone",
     ph_email: "Email",
     ph_message: "Message",
+
     btn_submit: "SUBMIT",
-    form_note: "This is a static demo form. To receive emails, connect Formspree (free) or another form service.",
+    form_sending: "Sending…",
+    form_success: "Thanks! Your message has been sent.",
+    form_error: "Sorry, something went wrong. Please try again or email us directly.",
+
     privacy: "Privacy Policy",
     terms: "Terms and Conditions",
     all_rights: "ALL RIGHTS RESERVED"
-    form_sending: "Sending…",
-    form_success: "Thanks! Your message has been sent.",
-    form_error: "Sorry, something went wrong. Please try again or email us directly."
   },
   fr: {
     nav_about: "À propos",
     nav_contact: "Contact",
+
     about_h1: "SMS Job Inc.",
-    about_p1: "SMSJob a fait partie de l’accélérateur X1 de l’Université McGill. Nous proposons des solutions de recrutement.",
+    about_p1: "SMSJob a fait partie de l’accélérateur X1 de l’Université McGill. Nous offrons des solutions de recrutement.",
     about_p2: "Nous aidons les entreprises à trouver des travailleurs et à les retenir. Nous sommes situés à Montréal, Canada.",
     about_ceo_name: "Amine Arezki",
     about_ceo_title: "Fondateur",
+
     partners_title: "Nos partenaires",
+
     contact_h1: "Nous Rejoindre",
     addr_line1: "SMS Job Inc.",
-    addr_line2: "4388 rue Saint‑Denis, Bureau 200",
+    addr_line2: "4388 rue Saint-Denis, Bureau 200",
     addr_line3: "Montréal, QC",
     mon_fri: "Lun - Ven",
     sat_sun: "Sam - Dim",
     closed: "Fermé",
+
     label_name: "Nom",
     label_phone: "Téléphone",
     label_email: "Email",
@@ -57,13 +66,15 @@ const I18N = {
     ph_phone: "Téléphone",
     ph_email: "Email",
     ph_message: "Message",
+
     btn_submit: "SOUMETTRE",
-    form_note: "Ceci est un formulaire de démonstration statique. Pour recevoir les messages, connectez Formspree (gratuit) ou un autre service.",
+    form_sending: "Envoi…",
+    form_success: "Merci ! Votre message a été envoyé.",
+    form_error: "Désolé, une erreur s’est produite. Réessayez ou écrivez-nous directement.",
+
     privacy: "Politique de confidentialité",
     terms: "Termes et conditions",
     all_rights: "TOUS DROITS RÉSERVÉS"
-    form_sending: "Envoi…",
-    form_success: "Merci ! Votre message a été envoyé.",
-    form_error: "Désolé, une erreur s’est produite. Réessayez ou écrivez-nous directement."
   }
 };
+
