@@ -1,4 +1,4 @@
-// ---------------- i18n + form ----------------
+// script.js
 (function () {
   const LS_KEY = "lang";
 
@@ -12,10 +12,13 @@
   function applyI18n(lang) {
     const t = (window.I18N && I18N[lang]) ? I18N[lang] : I18N.en;
 
+    // swap text
     document.querySelectorAll("[data-i18n]").forEach(el => {
       const k = el.getAttribute("data-i18n");
       if (t[k]) el.textContent = t[k];
     });
+
+    // swap placeholders
     document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
       const k = el.getAttribute("data-i18n-placeholder");
       if (t[k]) el.setAttribute("placeholder", t[k]);
@@ -26,15 +29,14 @@
     if (sel) sel.value = lang;
   }
 
+  // keep ?lang on internal links so nav stays in the same language
   function syncLangInLinks(lang){
-    // Add ?lang=xx to all internal links
     document.querySelectorAll('a[href]').forEach(a=>{
-      const href = a.getAttribute('href');
-      if(!href) return;
+      const href = a.getAttribute('href'); if(!href) return;
       if (/^(https?:)?\/\//i.test(href) || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
-      const url = new URL(href, window.location.href);
-      url.searchParams.set('lang', lang);
-      a.setAttribute('href', url.pathname + url.search + url.hash);
+      const u = new URL(href, window.location.href);
+      u.searchParams.set('lang', lang);
+      a.setAttribute('href', u.pathname + u.search + u.hash);
     });
   }
 
@@ -68,7 +70,7 @@
       });
     }
 
-    // Formspree AJAX (if present)
+    // Formspree AJAX (only on contact page)
     const form = document.getElementById("contactForm");
     const status = document.getElementById("formStatus");
     if (form) {
