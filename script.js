@@ -1,127 +1,102 @@
-// script.js (robust i18n + form)
+/* script.js — i18n engine + small helpers for SMSJob.ca */
+
 (function () {
-  const LS_KEY = "lang";
+  // ---------- Utilities ----------
+  function $(sel, root = document) { return root.querySelector(sel); }
+  function $all(sel, root = document) { return Array.from(root.querySelectorAll(sel)); }
 
-  function getLang(){
-    const url = new URL(window.location.href);
-    const byQuery = (url.searchParams.get("lang") || "").toLowerCase();
-    const byHash  = (url.hash || "").toLowerCase();
-    const picked =
-      (byQuery === "fr" || byQuery === "en") ? byQuery :
-      (byHash === "#fr" ? "fr" : byHash === "#en" ? "en" : null);
-    if (picked) { localStorage.setItem(LS_KEY, picked); return picked; }
-    return localStorage.getItem(LS_KEY) || "en";
+  // Year in footer
+  const yearEl = $("#year");
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  // Parse ?lang=xx
+  function getLangFromQuery() {
+    const params = new URLSearchParams(window.location.search);
+    const lang = params.get("lang");
+    return (lang === "en" || lang === "fr") ? lang : null;
   }
 
-  function dictFor(lang){
-    const dict = window.I18N || {};          // never touch I18N directly
-    return dict[lang] || dict.en || {};      // safe fallback
+  // Persisted
+  function getLangFromStorage() {
+    const lang = localStorage.getItem("smsjob_lang");
+    return (lang === "en" || lang === "fr") ? lang : null;
   }
 
-  function applyI18n(lang){
-    const t = dictFor(lang);
+  // Browser hint
+  function getLangFromNavigator() {
+    const n = navigator.language || (navigator.languages && navigator.languages[0]) || "en";
+    return n.toLowerCase().startsWith("fr") ? "fr" : "en";
+  }
 
-    document.querySelectorAll("[data-i18n]").forEach(el=>{
-      const k = el.getAttribute("data-i18n");
-      if (k in t) el.textContent = t[k];
-    });
+  // Pick language with priority: query → storage → browser → 'en'
+  function resolveInitialLang() {
+    return getLangFromQuery() || getLangFromStorage() || getLangFromNavigator() || "en";
+  }
 
-    document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{
-      const k = el.getAttribute("data-i18n-placeholder");
-      if (k in t) el.setAttribute("placeholder", t[k]);
-    });
-
+  // Set <html lang="..">
+  function setHtmlLang(lang) {
     document.documentElement.setAttribute("lang", lang);
-    const sel = document.getElementById("langSelect");
-    if (sel) sel.value = lang;
   }
 
-  function syncLangInLinks(lang){
-    document.querySelectorAll('a[href]').forEach(a=>{
-      const href = a.getAttribute('href'); if(!href) return;
-      if (/^(https?:)?\/\//i.test(href) || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
-      const u = new URL(href, window.location.href);
-      u.searchParams.set('lang', lang);
-      a.setAttribute('href', u.pathname + u.search + u.hash);
+  // Translate text nodes with [data-i18n]
+  function translateTextNodes(lang) {
+    const dict = (window.translations && window.translations[lang]) || {};
+    $all("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (dict[key] != null) {
+        el.textContent = dict[key];
+      }
     });
   }
 
-  function markActiveNav(){
-    const path = location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.main-nav a').forEach(a=>{
-      const href = a.getAttribute('href') || '';
-      if (href.indexOf(path) > -1) a.classList.add('active');
+  // Translate placeholders/labels via [data-i18n-placeholder]
+  function translatePlaceholders(lang) {
+    const dict = (window.translations && window.translations[lang]) || {};
+    $all("[data-i18n-placeholder]").forEach(el => {
+      const key = el.getAttribute("data-i18n-placeholder");
+      if (dict[key] != null) {
+        el.setAttribute("placeholder", dict[key]);
+      }
     });
   }
 
-  // Optional: show which keys are missing in the console
-  function auditI18n(lang){
-    const t = dictFor(lang);
-    const missing = new Set();
-    document.querySelectorAll('[data-i18n]').forEach(el=>{
-      const k = el.getAttribute('data-i18n');
-      if (!(k in t)) missing.add(k);
-    });
-    if (missing.size) console.warn('Missing i18n keys for', lang, Array.from(missing));
+  // Keep ?lang=xx in URL without reloading
+  function updateUrlParam(lang) {
+    const url = new URL(window.location.href);
+    url.searchParams.set("lang", lang);
+    window.history.replaceState({}, "", url);
   }
 
-  document.addEventListener("DOMContentLoaded", ()=>{
-    // Year
-    const y = document.getElementById("year");
-    if (y) y.textContent = new Date().getFullYear();
+  // Main apply function
+  function applyLanguage(lang) {
+    // safety
+    if (!["en", "fr"].includes(lang)) lang = "en";
 
-    // Init i18n
-    const lang = getLang();
-    applyI18n(lang);
-    syncLangInLinks(lang);
-    markActiveNav();
-    auditI18n(lang);
+    setHtmlLang(lang);
+    translateTextNodes(lang);
+    translatePlaceholders(lang);
+    localStorage.setItem("smsjob_lang", lang);
+    updateUrlParam(lang);
 
-    // Switcher
-    const sel = document.getElementById("langSelect");
-    if (sel) {
-      sel.addEventListener("change", e=>{
-        const v = e.target.value;
-        localStorage.setItem(LS_KEY, v);
-        applyI18n(v);
-        syncLangInLinks(v);
-        const url = new URL(window.location.href);
-        url.searchParams.set("lang", v);
-        history.replaceState({}, "", url.toString());
-        auditI18n(v);
-      });
-    }
+    // Sync dropdown
+    const sel = $("#langSelect");
+    if (sel && sel.value !== lang) sel.value = lang;
+  }
 
-    // Formspree AJAX (if present)
-    const form = document.getElementById("contactForm");
-    const status = document.getElementById("formStatus");
-    if (form) {
-      const endpoint = form.getAttribute("action");
-      form.addEventListener("submit", async (e)=>{
-        e.preventDefault();
-        const t = dictFor(getLang());
-        const btn = form.querySelector('button[type="submit"]');
-        const old = btn.textContent;
+  // Initialize on DOM ready
+  document.addEventListener("DOMContentLoaded", function () {
+    const initial = resolveInitialLang();
+    applyLanguage(initial);
 
-        btn.disabled = true; btn.textContent = t.form_sending || "Sending…";
-        if (status) { status.textContent = t.form_sending || "Sending…"; status.className = "status"; }
-
-        try{
-          const res = await fetch(endpoint, { method:"POST", headers:{ "Accept":"application/json" }, body:new FormData(form) });
-          if (res.ok){
-            if (status){ status.textContent = t.form_success || "Thanks! Your message has been sent."; status.className = "status ok"; }
-            form.reset();
-          } else {
-            if (status){ status.textContent = t.form_error || "Sorry, something went wrong."; status.className = "status err"; }
-          }
-        } catch {
-          if (status){ status.textContent = t.form_error || "Sorry, something went wrong."; status.className = "status err"; }
-        } finally {
-          btn.disabled = false; btn.textContent = old;
-        }
+    // Bind dropdown
+    const langSelect = $("#langSelect");
+    if (langSelect) {
+      langSelect.addEventListener("change", (e) => {
+        applyLanguage(e.target.value);
       });
     }
   });
 })();
+
 
 
