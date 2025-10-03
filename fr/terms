@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Termes et conditions — SMS Job Inc.</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="alternate" href="https://smsjob.ca/terms.html" hreflang="en">
+  <link rel="alternate" href="https://smsjob.ca/fr/terms.html" hreflang="fr">
+  <link rel="alternate" href="https://smsjob.ca/terms.html" hreflang="x-default">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/fr/index.html">SMSJob.ca</a>
+      <nav class="main-nav">
+        <a href="/fr/index.html">À propos</a>
+        <a href="/fr/contact.html">Contact</a>
+        <a href="/fr/privacy.html">Politique de confidentialité</a>
+        <a href="/fr/terms.html" class="active">Termes et conditions</a>
+      </nav>
+      <div class="lang-switcher">
+        <a href="/terms.html" aria-label="View this page in English">English</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding:48px 0">
+    <h1>Termes et conditions</h1>
+    <ul>
+      <li>Utilisation du site : Vous vous engagez à utiliser ce site uniquement à des fins légales.</li>
+      <li>Propriété intellectuelle : Tout le contenu du site (textes, images, logos) appartient à SMS Job Inc., sauf indication contraire. Il est interdit de le copier ou de le distribuer sans autorisation.</li>
+      <li>Aucune garantie : Nous nous efforçons d’offrir de l’information exacte, mais nous ne garantissons pas l’absence d’erreurs ni la disponibilité continue du site.</li>
+      <li>Limitation de responsabilité : SMS Job Inc. n’est pas responsable des dommages découlant de l’utilisation de ce site.</li>
+      <li>Liens externes : Nous ne sommes pas responsables du contenu ou des pratiques des sites tiers liés depuis notre site.</li>
+      <li>Droit applicable : Les présentes conditions sont régies par les lois du Québec et du Canada.</li>
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav class="footer-nav">
+        <a href="/fr/index.html">À propos</a>
+        <a href="/fr/contact.html">Contact</a>
+        <a href="/fr/privacy.html">Politique de confidentialité</a>
+        <a href="/fr/terms.html">Termes et conditions</a>
+      </nav>
+      <p class="copyright">
+        © <span id="year"></span> SMS Job Inc. <span>TOUS DROITS RÉSERVÉS</span>
+      </p>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', ()=> {
+      const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>
