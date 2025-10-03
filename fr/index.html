@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SMS Job Inc.</title>
+  <meta name="description" content="SMSJob offre des solutions de recrutement pour aider les entreprises à recruter et fidéliser les travailleurs à Montréal, Canada." />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="alternate" href="https://smsjob.ca/index.html" hreflang="en">
+  <link rel="alternate" href="https://smsjob.ca/fr/index.html" hreflang="fr">
+  <link rel="alternate" href="https://smsjob.ca/index.html" hreflang="x-default">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/fr/index.html">SMSJob.ca</a>
+      <nav class="main-nav">
+        <a href="/fr/index.html" class="active">À propos</a>
+        <a href="/fr/contact.html">Contact</a>
+        <a href="/fr/privacy.html">Politique de confidentialité</a>
+        <a href="/fr/terms.html">Termes et conditions</a>
+      </nav>
+      <div class="lang-switcher">
+        <a href="/index.html" aria-label="View the site in English">English</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-media">
+        <img src="/assets/hero.jpg" alt="Présentation à l’accélérateur McGill Dobson Centre" />
+      </div>
+      <div class="hero-text">
+        <h1>SMS Job Inc.</h1>
+        <p>SMSJob a fait partie de l’accélérateur X1 de l’Université McGill. Nous offrons des solutions de recrutement.</p>
+        <p>Nous aidons les entreprises à recruter et à fidéliser les travailleurs. Nous sommes situés à Montréal, Canada.</p>
+        <p class="signature">
+          <span>Amine Arezki</span><br />
+          <span>Fondateur/CEO</span>
+        </p>
+      </div>
+    </section>
+
+    <section class="partners container">
+      <h2 class="section-title"><span>Nos partenaires</span></h2>
+      <div class="logo-row">
+        <img src="/assets/partners/mcgill.png" alt="Logo McGill Dobson Centre for Entrepreneurship" />
+        <img src="/assets/partners/x1.png" alt="Logo McGill X-1 Accelerator" />
+        <img src="/assets/partners/d3.png" alt="Logo District 3" />
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav class="footer-nav">
+        <a href="/fr/index.html">À propos</a>
+        <a href="/fr/contact.html">Contact</a>
+        <a href="/fr/privacy.html">Politique de confidentialité</a>
+        <a href="/fr/terms.html">Termes et conditions</a>
+      </nav>
+      <p class="copyright">
+        © <span id="year"></span> SMS Job Inc. <span>TOUS DROITS RÉSERVÉS</span>
+      </p>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', ()=> {
+      const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>
