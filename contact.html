@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact — SMS Job Inc.</title>
-  <meta name="description" content="Contact SMS Job Inc. in Montréal, QC.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Contact SMS Job Inc. in Montréal, QC." />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="alternate" href="https://smsjob.ca/contact.html" hreflang="en">
+  <link rel="alternate" href="https://smsjob.ca/fr/contact.html" hreflang="fr">
+  <link rel="alternate" href="https://smsjob.ca/contact.html" hreflang="x-default">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html">SMSJob.ca</a>
+      <a class="brand" href="/index.html">SMSJob.ca</a>
       <nav class="main-nav">
-        <a href="index.html" data-i18n="nav_about">About Us</a>
-        <a href="contact.html" class="active" data-i18n="nav_contact">Contact Us</a>
+        <a href="/index.html">About Us</a>
+        <a href="/contact.html" class="active">Contact</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms and Conditions</a>
       </nav>
       <div class="lang-switcher">
-        <label class="sr-only" for="langSelect">Language</label>
-        <select id="langSelect" aria-label="Language">
-          <option value="en">English</option>
-          <option value="fr">Français</option>
-        </select>
+        <a href="/fr/contact.html" aria-label="Voir la page en français">Français</a>
       </div>
     </div>
   </header>
@@ -31,62 +29,49 @@
   <main>
     <section class="contact container">
       <div class="contact-info card">
-        <h1 data-i18n="contact_h1">Contact info</h1>
+        <h1>Contact info</h1>
         <p><strong>info@SMSJob.ca</strong></p>
         <address>
-          <span data-i18n="addr_line1">SMS Job Inc.</span><br>
-          <span data-i18n="addr_line2">4388 Saint-Denis #200</span><br>
-          <span data-i18n="addr_line3">Montréal, QC</span><br>
-          <span>H2J 2L1</span>
+          SMS Job Inc.<br />
+          4388 Saint-Denis #200<br />
+          Montréal, QC<br />
+          H2J 2L1
         </address>
 
         <table class="hours">
-          <tr>
-            <td data-i18n="mon_fri">Mon - Fri</td>
-            <td>10:00 am - 6:00 pm</td>
-          </tr>
-          <tr>
-            <td data-i18n="sat_sun">Sat - Sun</td>
-            <td data-i18n="closed">Closed</td>
-          </tr>
+          <tr><td>Mon - Fri</td><td>10:00 am - 6:00 pm</td></tr>
+          <tr><td>Sat - Sun</td><td>Closed</td></tr>
         </table>
       </div>
 
       <div class="contact-form card">
-<form id="contactForm" method="POST" action="https://formspree.io/f/mqadoneg" accept-charset="UTF-8" novalidate>
-  <!-- Honeypot (spam trap) -->
-  <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <form id="contactForm" method="POST" action="https://formspree.io/f/mqadoneg" accept-charset="UTF-8" novalidate>
+          <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" required placeholder="Name" />
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" placeholder="Phone" />
+            </div>
+          </div>
 
-  <div class="form-row">
-    <div class="form-field">
-      <label for="name" data-i18n="label_name">Name</label>
-      <input id="name" name="name" type="text" required data-i18n-placeholder="ph_name" placeholder="Name">
-    </div>
-    <div class="form-field">
-      <label for="phone" data-i18n="label_phone">Phone</label>
-      <input id="phone" name="phone" type="tel" data-i18n-placeholder="ph_phone" placeholder="Phone">
-    </div>
-  </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="Email" />
+          </div>
 
-  <div class="form-field">
-    <label for="email" data-i18n="label_email">Email</label>
-    <input id="email" name="email" type="email" required data-i18n-placeholder="ph_email" placeholder="Email">
-  </div>
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Message"></textarea>
+          </div>
 
-  <div class="form-field">
-    <label for="message" data-i18n="label_message">Message</label>
-    <textarea id="message" name="message" rows="5" required data-i18n-placeholder="ph_message" placeholder="Message"></textarea>
-  </div>
-
-  <!-- Optional: subject line in the email you receive -->
-  <input type="hidden" name="_subject" value="New message from SMSJob.ca">
-
-  <button type="submit" class="btn" data-i18n="btn_submit">SUBMIT</button>
-  <p id="formStatus" class="status" role="status" aria-live="polite"></p>
-
-  <!-- You can delete this note now that it’s wired up -->
-  <p class="form-note" data-i18n="form_note">We’ll reply as soon as possible.</p>
-</form>
+          <input type="hidden" name="_subject" value="New message from SMSJob.ca" />
+          <button type="submit" class="btn">SUBMIT</button>
+          <p class="form-note">We’ll reply as soon as possible.</p>
+        </form>
       </div>
     </section>
 
@@ -107,18 +92,20 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <nav class="footer-nav">
-        <a href="index.html" data-i18n="nav_about">About Us</a>
-        <a href="contact.html" data-i18n="nav_contact">Contact</a>
-        <a href="privacy.html" data-i18n="privacy">Privacy Policy</a>
-        <a href="terms.html" data-i18n="terms">Terms and Conditions</a>
+        <a href="/index.html">About Us</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms and Conditions</a>
       </nav>
       <p class="copyright">
-        © <span id="year"></span> SMS Job Inc. <span data-i18n="all_rights">ALL RIGHTS RESERVED</span>
+        © <span id="year"></span> SMS Job Inc. <span>ALL RIGHTS RESERVED</span>
       </p>
     </div>
   </footer>
-
-  <script src="lang.js"></script>
-  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', ()=> {
+      const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+    });
+  </script>
 </body>
 </html>
