@@ -3,55 +3,58 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title data-i18n="meta_title_terms">Terms and Conditions — SMS Job Inc.</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Terms and Conditions — SMS Job Inc.</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="alternate" href="https://smsjob.ca/terms.html" hreflang="en">
+  <link rel="alternate" href="https://smsjob.ca/fr/terms.html" hreflang="fr">
+  <link rel="alternate" href="https://smsjob.ca/terms.html" hreflang="x-default">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html">SMSJob.ca</a>
+      <a class="brand" href="/index.html">SMSJob.ca</a>
       <nav class="main-nav">
-        <a href="index.html" data-i18n="nav_about">About Us</a>
-        <a href="contact.html" data-i18n="nav_contact">Contact</a>
+        <a href="/index.html">About Us</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html" class="active">Terms and Conditions</a>
       </nav>
       <div class="lang-switcher">
-        <label class="sr-only" for="langSelect" data-i18n="aria_lang">Language</label>
-        <select id="langSelect">
-          <option value="en">English</option>
-          <option value="fr">Français</option>
-        </select>
+        <a href="/fr/terms.html" aria-label="Voir la page en français">Français</a>
       </div>
     </div>
   </header>
 
   <main class="container" style="padding:48px 0">
-    <h1 data-i18n="terms">Terms and Conditions</h1>
-
+    <h1>Terms and Conditions</h1>
     <ul>
-      <li data-i18n="t1">Use of Website: You agree to use this website for lawful purposes only.</li>
-      <li data-i18n="t2">Intellectual Property: All content on this website, including text, images, and logos, is the property of SMS Job Inc. unless otherwise noted. You may not copy or distribute it without permission.</li>
-      <li data-i18n="t3">No Warranty: We strive to provide accurate information, but we do not guarantee that the website will be error-free or available at all times.</li>
-      <li data-i18n="t4">Limitation of Liability: SMS Job Inc. is not responsible for damages resulting from the use of this website.</li>
-      <li data-i18n="t5">Links to Other Websites: We are not responsible for the content or practices of third-party websites linked from our site.</li>
-      <li data-i18n="t6">Governing Law: These Terms are governed by the laws of Québec and Canada.</li>
+      <li>Use of Website: You agree to use this website for lawful purposes only.</li>
+      <li>Intellectual Property: All content on this website, including text, images, and logos, is the property of SMS Job Inc. unless otherwise noted. You may not copy or distribute it without permission.</li>
+      <li>No Warranty: We strive to provide accurate information, but we do not guarantee that the website will be error-free or available at all times.</li>
+      <li>Limitation of Liability: SMS Job Inc. is not responsible for damages resulting from the use of this website.</li>
+      <li>Links to Other Websites: We are not responsible for the content or practices of third-party websites linked from our site.</li>
+      <li>Governing Law: These Terms are governed by the laws of Québec and Canada.</li>
     </ul>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
       <nav class="footer-nav">
-        <a href="index.html" data-i18n="nav_about">About Us</a>
-        <a href="contact.html" data-i18n="nav_contact">Contact</a>
-        <a href="privacy.html" data-i18n="privacy">Privacy Policy</a>
-        <a href="terms.html" data-i18n="terms">Terms and Conditions</a>
+        <a href="/index.html">About Us</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms and Conditions</a>
       </nav>
       <p class="copyright">
-        © <span id="year"></span> SMS Job Inc. <span data-i18n="all_rights">ALL RIGHTS RESERVED</span>
+        © <span id="year"></span> SMS Job Inc. <span>ALL RIGHTS RESERVED</span>
       </p>
     </div>
   </footer>
-
-  <script src="lang.js"></script>
-  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', ()=> {
+      const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+    });
+  </script>
 </body>
 </html>
+
