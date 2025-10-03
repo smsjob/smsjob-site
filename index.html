@@ -3,27 +3,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title data-i18n="meta_title_home">SMS Job Inc.</title>
+  <title>SMS Job Inc.</title>
   <meta name="description" content="SMSJob offers recruitment solutions to help businesses recruit and retain workers in Montréal, Canada." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/styles.css" />
+  <!-- hreflang alternates -->
+  <link rel="alternate" href="https://smsjob.ca/index.html" hreflang="en">
+  <link rel="alternate" href="https://smsjob.ca/fr/index.html" hreflang="fr">
+  <link rel="alternate" href="https://smsjob.ca/index.html" hreflang="x-default">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html">SMSJob.ca</a>
+      <a class="brand" href="/index.html">SMSJob.ca</a>
       <nav class="main-nav">
-        <a href="index.html" class="active" data-i18n="nav_about">About Us</a>
-        <a href="contact.html" data-i18n="nav_contact">Contact Us</a>
+        <a href="/index.html" class="active">About Us</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms and Conditions</a>
       </nav>
       <div class="lang-switcher">
-        <label class="sr-only" for="langSelect" data-i18n="aria_lang">Language</label>
-        <select id="langSelect" aria-label="Language">
-          <option value="en">English</option>
-          <option value="fr">Français</option>
-        </select>
+        <a href="/fr/index.html" aria-label="Voir le site en français">Français</a>
       </div>
     </div>
   </header>
@@ -31,25 +30,25 @@
   <main>
     <section class="hero container">
       <div class="hero-media">
-        <img src="assets/hero.jpg" alt="Presentation at McGill Dobson Centre Accelerator" />
+        <img src="/assets/hero.jpg" alt="Presentation at McGill Dobson Centre Accelerator" />
       </div>
       <div class="hero-text">
-        <h1 data-i18n="about_h1">SMS Job Inc.</h1>
-        <p data-i18n="about_p1">SMSJob was part of X1 McGill University Accelerator. We offer recruitment solutions.</p>
-        <p data-i18n="about_p2">We help businesses recruit and retain workers. We're located in Montréal, Canada.</p>
+        <h1>SMS Job Inc.</h1>
+        <p>SMSJob was part of X1 McGill University Accelerator. We offer recruitment solutions.</p>
+        <p>We help businesses recruit and retain workers. We're located in Montréal, Canada.</p>
         <p class="signature">
-          <span data-i18n="about_ceo_name">Amine Arezki</span><br />
-          <span data-i18n="about_ceo_title">Founder/CEO</span>
+          <span>Amine Arezki</span><br />
+          <span>Founder/CEO</span>
         </p>
       </div>
     </section>
 
     <section class="partners container">
-      <h2 class="section-title"><span data-i18n="partners_title">Our Partners</span></h2>
+      <h2 class="section-title"><span>Our Partners</span></h2>
       <div class="logo-row">
-        <img src="assets/partners/mcgill.png" alt="McGill Dobson Centre for Entrepreneurship logo" />
-        <img src="assets/partners/x1.png" alt="McGill X-1 Accelerator logo" />
-        <img src="assets/partners/d3.png" alt="District 3 logo" />
+        <img src="/assets/partners/mcgill.png" alt="McGill Dobson Centre for Entrepreneurship logo" />
+        <img src="/assets/partners/x1.png" alt="McGill X-1 Accelerator logo" />
+        <img src="/assets/partners/d3.png" alt="District 3 logo" />
       </div>
     </section>
   </main>
@@ -57,18 +56,21 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <nav class="footer-nav">
-        <a href="index.html" data-i18n="nav_about">About Us</a>
-        <a href="contact.html" data-i18n="nav_contact">Contact</a>
-        <a href="privacy.html" data-i18n="privacy">Privacy Policy</a>
-        <a href="terms.html" data-i18n="terms">Terms and Conditions</a>
+        <a href="/index.html">About Us</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms and Conditions</a>
       </nav>
       <p class="copyright">
-        © <span id="year"></span> SMS Job Inc. <span data-i18n="all_rights">ALL RIGHTS RESERVED</span>
+        © <span id="year"></span> SMS Job Inc. <span>ALL RIGHTS RESERVED</span>
       </p>
     </div>
   </footer>
-
-  <script src="lang.js"></script>
-  <script src="script.js"></script>
+  <script>
+    // Just set the year; no translations needed
+    document.addEventListener('DOMContentLoaded', ()=> {
+      const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+    });
+  </script>
 </body>
 </html>
