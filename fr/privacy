@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Politique de confidentialité — SMS Job Inc.</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="alternate" href="https://smsjob.ca/privacy.html" hreflang="en">
+  <link rel="alternate" href="https://smsjob.ca/fr/privacy.html" hreflang="fr">
+  <link rel="alternate" href="https://smsjob.ca/privacy.html" hreflang="x-default">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/fr/index.html">SMSJob.ca</a>
+      <nav class="main-nav">
+        <a href="/fr/index.html">À propos</a>
+        <a href="/fr/contact.html">Contact</a>
+        <a href="/fr/privacy.html" class="active">Politique de confidentialité</a>
+        <a href="/fr/terms.html">Termes et conditions</a>
+      </nav>
+      <div class="lang-switcher">
+        <a href="/privacy.html" aria-label="View this page in English">English</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding:48px 0">
+    <h1>Politique de confidentialité</h1>
+    <p>Nous accordons une grande importance à votre vie privée. Ce site recueille uniquement les renseignements personnels nécessaires à la prestation de nos services, comme votre nom, votre adresse courriel ou votre numéro de téléphone lorsque vous nous contactez ou remplissez un formulaire.</p>
+    <ul>
+      <li>Utilisation des renseignements : Nous utilisons vos renseignements uniquement pour répondre à vos demandes, fournir nos services ou améliorer notre site.</li>
+      <li>Partage : Nous ne vendons ni ne louons vos renseignements personnels. Nous pouvons les divulguer uniquement lorsque la loi l’exige.</li>
+      <li>Témoins (cookies) : Ce site peut utiliser des témoins ou des outils d’analyse pour améliorer l’expérience utilisateur. Vous pouvez les désactiver dans votre navigateur en tout temps.</li>
+      <li>Sécurité des données : Nous prenons des mesures raisonnables pour protéger vos renseignements contre tout accès non autorisé.</li>
+      <li>Vos droits (Québec/Canada) : Vous pouvez accéder à vos renseignements, les corriger ou en demander la suppression. Pour exercer ces droits, écrivez-nous à info@smsjob.ca.</li>
+      <li>Mises à jour : Cette politique peut être modifiée à l’occasion. Les changements seront publiés sur cette page.</li>
+    </ul>
+    <p>Pour toute question au sujet de notre politique de confidentialité, contactez-nous : info@smsjob.ca.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav class="footer-nav">
+        <a href="/fr/index.html">À propos</a>
+        <a href="/fr/contact.html">Contact</a>
+        <a href="/fr/privacy.html">Politique de confidentialité</a>
+        <a href="/fr/terms.html">Termes et conditions</a>
+      </nav>
+      <p class="copyright">
+        © <span id="year"></span> SMS Job Inc. <span>TOUS DROITS RÉSERVÉS</span>
+      </p>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', ()=> {
+      const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>
