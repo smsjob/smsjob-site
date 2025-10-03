@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Privacy Policy — SMS Job Inc.</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="meta_title_privacy">Privacy Policy — SMS Job Inc.</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
@@ -14,28 +15,35 @@
         <a href="contact.html" data-i18n="nav_contact">Contact</a>
       </nav>
       <div class="lang-switcher">
-        <select id="langSelect"><option value="en">English</option><option value="fr">Français</option></select>
+        <label class="sr-only" for="langSelect" data-i18n="aria_lang">Language</label>
+        <select id="langSelect">
+          <option value="en">English</option>
+          <option value="fr">Français</option>
+        </select>
       </div>
     </div>
   </header>
+
   <main class="container" style="padding:48px 0">
     <h1 data-i18n="privacy">Privacy Policy</h1>
-    <p>We value your privacy. This website collects only the personal information necessary to provide our services, such as your name, email address, or phone number if you choose to contact us or complete a form.
-Use of Information: We use your information solely to respond to inquiries, provide services, or improve our website.  
-      
-      Sharing: We do not sell or rent your personal information. We may share information only when required by law.
-      
-Cookies: This website may use cookies or analytics tools to improve user experience. You may disable cookies in your browser at any time.
 
-      Data Security: We take reasonable measures to protect your information from unauthorized access.
+    <p data-i18n="privacy_intro">
+      We value your privacy. This website collects only the personal information necessary to provide our services, such as your name, email address, or phone number if you choose to contact us or complete a form.
+    </p>
+    <ul>
+      <li data-i18n="privacy_use">Use of Information: We use your information solely to respond to inquiries, provide services, or improve our website.</li>
+      <li data-i18n="privacy_sharing">Sharing: We do not sell or rent your personal information. We may share information only when required by law.</li>
+      <li data-i18n="privacy_cookies">Cookies: This website may use cookies or analytics tools to improve user experience. You may disable cookies in your browser at any time.</li>
+      <li data-i18n="privacy_security">Data Security: We take reasonable measures to protect your information from unauthorized access.</li>
+      <li data-i18n="privacy_rights">Your Rights (Québec/Canada): You have the right to access, correct, or request deletion of your personal information. To exercise these rights, please contact us at info@smsjob.ca.</li>
+      <li data-i18n="privacy_updates">Updates: We may update this Privacy Policy from time to time. Changes will be posted on this page.</li>
+    </ul>
 
-      Your Rights (Québec/Canada): You have the right to access, correct, or request deletion of your personal information. To exercise these rights, please contact us at info@smsjob.ca .
-
-      Updates: We may update this Privacy Policy from time to time. Changes will be posted on this page.
-
-      If you have questions about our Privacy Policy, please contact us at: info@smsjob.ca .
-</p>
+    <p data-i18n="privacy_contact_line">
+      If you have questions about our Privacy Policy, please contact us at: info@smsjob.ca.
+    </p>
   </main>
+
   <footer class="site-footer">
     <div class="container footer-inner">
       <nav class="footer-nav">
@@ -49,6 +57,9 @@ Cookies: This website may use cookies or analytics tools to improve user experie
       </p>
     </div>
   </footer>
-  <script src="lang.js"></script><script src="script.js"></script>
+
+  <script src="lang.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
+
