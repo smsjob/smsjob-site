@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — SMS Job Inc.</title>
+  <meta name="description" content="Contactez SMS Job Inc. à Montréal (QC)." />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="alternate" href="https://smsjob.ca/contact.html" hreflang="en">
+  <link rel="alternate" href="https://smsjob.ca/fr/contact.html" hreflang="fr">
+  <link rel="alternate" href="https://smsjob.ca/contact.html" hreflang="x-default">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/fr/index.html">SMSJob.ca</a>
+      <nav class="main-nav">
+        <a href="/fr/index.html">À propos</a>
+        <a href="/fr/contact.html" class="active">Contact</a>
+        <a href="/fr/privacy.html">Politique de confidentialité</a>
+        <a href="/fr/terms.html">Termes et conditions</a>
+      </nav>
+      <div class="lang-switcher">
+        <a href="/contact.html" aria-label="View this page in English">English</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact container">
+      <div class="contact-info card">
+        <h1>Coordonnées</h1>
+        <p><strong>info@SMSJob.ca</strong></p>
+        <address>
+          SMS Job Inc.<br />
+          4388 Saint-Denis #200<br />
+          Montréal (QC)<br />
+          H2J 2L1
+        </address>
+
+        <table class="hours">
+          <tr><td>Lun - Ven</td><td>10 h 00 - 18 h 00</td></tr>
+          <tr><td>Sam - Dim</td><td>Fermé</td></tr>
+        </table>
+      </div>
+
+      <div class="contact-form card">
+        <form id="contactForm" method="POST" action="https://formspree.io/f/mqadoneg" accept-charset="UTF-8" novalidate>
+          <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Nom</label>
+              <input id="name" name="name" type="text" required placeholder="Nom" />
+            </div>
+            <div class="form-field">
+              <label for="phone">Téléphone</label>
+              <input id="phone" name="phone" type="tel" placeholder="Téléphone" />
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="email">Courriel</label>
+            <input id="email" name="email" type="email" required placeholder="Courriel" />
+          </div>
+
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Message"></textarea>
+          </div>
+
+          <input type="hidden" name="_subject" value="Nouveau message de SMSJob.ca" />
+          <button type="submit" class="btn">ENVOYER</button>
+          <p class="form-note">Nous vous répondrons dès que possible.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="map container">
+      <iframe
+        title="Carte"
+        width="100%"
+        height="320"
+        style="border:0"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=4388%20Saint-Denis%20Montr%C3%A9al&output=embed">
+      </iframe>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav class="footer-nav">
+        <a href="/fr/index.html">À propos</a>
+        <a href="/fr/contact.html">Contact</a>
+        <a href="/fr/privacy.html">Politique de confidentialité</a>
+        <a href="/fr/terms.html">Termes et conditions</a>
+      </nav>
+      <p class="copyright">
+        © <span id="year"></span> SMS Job Inc. <span>TOUS DROITS RÉSERVÉS</span>
+      </p>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', ()=> {
+      const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>
