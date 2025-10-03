@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Terms and Conditions — SMS Job Inc.</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="meta_title_terms">Terms and Conditions — SMS Job Inc.</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
@@ -14,20 +15,28 @@
         <a href="contact.html" data-i18n="nav_contact">Contact</a>
       </nav>
       <div class="lang-switcher">
-        <select id="langSelect"><option value="en">English</option><option value="fr">Français</option></select>
+        <label class="sr-only" for="langSelect" data-i18n="aria_lang">Language</label>
+        <select id="langSelect">
+          <option value="en">English</option>
+          <option value="fr">Français</option>
+        </select>
       </div>
     </div>
   </header>
+
   <main class="container" style="padding:48px 0">
     <h1 data-i18n="terms">Terms and Conditions</h1>
-    <p>By accessing this website, you agree to the following terms:
-Use of Website: You agree to use this website for lawful purposes only.
-Intellectual Property: All content on this website, including text, images, and logos, is the property of [Your Business Name] unless otherwise noted. You may not copy or distribute it without permission.
-No Warranty: We strive to provide accurate information, but we do not guarantee that the website will be error-free or available at all times.
-Limitation of Liability: [Your Business Name] is not responsible for damages resulting from the use of this website.
-Links to Other Websites: We are not responsible for the content or practices of third-party websites linked from our site.
-Governing Law: These Terms are governed by the laws of Québec and Canada.</p>
+
+    <ul>
+      <li data-i18n="t1">Use of Website: You agree to use this website for lawful purposes only.</li>
+      <li data-i18n="t2">Intellectual Property: All content on this website, including text, images, and logos, is the property of SMS Job Inc. unless otherwise noted. You may not copy or distribute it without permission.</li>
+      <li data-i18n="t3">No Warranty: We strive to provide accurate information, but we do not guarantee that the website will be error-free or available at all times.</li>
+      <li data-i18n="t4">Limitation of Liability: SMS Job Inc. is not responsible for damages resulting from the use of this website.</li>
+      <li data-i18n="t5">Links to Other Websites: We are not responsible for the content or practices of third-party websites linked from our site.</li>
+      <li data-i18n="t6">Governing Law: These Terms are governed by the laws of Québec and Canada.</li>
+    </ul>
   </main>
+
   <footer class="site-footer">
     <div class="container footer-inner">
       <nav class="footer-nav">
@@ -41,6 +50,8 @@ Governing Law: These Terms are governed by the laws of Québec and Canada.</p>
       </p>
     </div>
   </footer>
-  <script src="lang.js"></script><script src="script.js"></script>
+
+  <script src="lang.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
