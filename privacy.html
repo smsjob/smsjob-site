@@ -3,63 +3,60 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title data-i18n="meta_title_privacy">Privacy Policy — SMS Job Inc.</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Privacy Policy — SMS Job Inc.</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="alternate" href="https://smsjob.ca/privacy.html" hreflang="en">
+  <link rel="alternate" href="https://smsjob.ca/fr/privacy.html" hreflang="fr">
+  <link rel="alternate" href="https://smsjob.ca/privacy.html" hreflang="x-default">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html">SMSJob.ca</a>
+      <a class="brand" href="/index.html">SMSJob.ca</a>
       <nav class="main-nav">
-        <a href="index.html" data-i18n="nav_about">About Us</a>
-        <a href="contact.html" data-i18n="nav_contact">Contact</a>
+        <a href="/index.html">About Us</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html" class="active">Privacy Policy</a>
+        <a href="/terms.html">Terms and Conditions</a>
       </nav>
       <div class="lang-switcher">
-        <label class="sr-only" for="langSelect" data-i18n="aria_lang">Language</label>
-        <select id="langSelect">
-          <option value="en">English</option>
-          <option value="fr">Français</option>
-        </select>
+        <a href="/fr/privacy.html" aria-label="Voir la page en français">Français</a>
       </div>
     </div>
   </header>
 
   <main class="container" style="padding:48px 0">
-    <h1 data-i18n="privacy">Privacy Policy</h1>
-
-    <p data-i18n="privacy_intro">
-      We value your privacy. This website collects only the personal information necessary to provide our services, such as your name, email address, or phone number if you choose to contact us or complete a form.
-    </p>
+    <h1>Privacy Policy</h1>
+    <p>We value your privacy. This website collects only the personal information necessary to provide our services, such as your name, email address, or phone number if you choose to contact us or complete a form.</p>
     <ul>
-      <li data-i18n="privacy_use">Use of Information: We use your information solely to respond to inquiries, provide services, or improve our website.</li>
-      <li data-i18n="privacy_sharing">Sharing: We do not sell or rent your personal information. We may share information only when required by law.</li>
-      <li data-i18n="privacy_cookies">Cookies: This website may use cookies or analytics tools to improve user experience. You may disable cookies in your browser at any time.</li>
-      <li data-i18n="privacy_security">Data Security: We take reasonable measures to protect your information from unauthorized access.</li>
-      <li data-i18n="privacy_rights">Your Rights (Québec/Canada): You have the right to access, correct, or request deletion of your personal information. To exercise these rights, please contact us at info@smsjob.ca.</li>
-      <li data-i18n="privacy_updates">Updates: We may update this Privacy Policy from time to time. Changes will be posted on this page.</li>
+      <li>Use of Information: We use your information solely to respond to inquiries, provide services, or improve our website.</li>
+      <li>Sharing: We do not sell or rent your personal information. We may share information only when required by law.</li>
+      <li>Cookies: This website may use cookies or analytics tools to improve user experience. You may disable cookies in your browser at any time.</li>
+      <li>Data Security: We take reasonable measures to protect your information from unauthorized access.</li>
+      <li>Your Rights (Québec/Canada): You have the right to access, correct, or request deletion of your personal information. To exercise these rights, please contact us at info@smsjob.ca.</li>
+      <li>Updates: We may update this Privacy Policy from time to time. Changes will be posted on this page.</li>
     </ul>
-
-    <p data-i18n="privacy_contact_line">
-      If you have questions about our Privacy Policy, please contact us at: info@smsjob.ca.
-    </p>
+    <p>If you have questions about our Privacy Policy, please contact us at: info@smsjob.ca.</p>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
       <nav class="footer-nav">
-        <a href="index.html" data-i18n="nav_about">About Us</a>
-        <a href="contact.html" data-i18n="nav_contact">Contact</a>
-        <a href="privacy.html" data-i18n="privacy">Privacy Policy</a>
-        <a href="terms.html" data-i18n="terms">Terms and Conditions</a>
+        <a href="/index.html">About Us</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms and Conditions</a>
       </nav>
       <p class="copyright">
-        © <span id="year"></span> SMS Job Inc. <span data-i18n="all_rights">ALL RIGHTS RESERVED</span>
+        © <span id="year"></span> SMS Job Inc. <span>ALL RIGHTS RESERVED</span>
       </p>
     </div>
   </footer>
-
-  <script src="lang.js"></script>
-  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', ()=> {
+      const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+    });
+  </script>
 </body>
 </html>
 
