@@ -111,5 +111,97 @@ input, textarea{
   .brand{font-size:36px}
   .hero-text h1{font-size:36px}
   .section-title{font-size:36px}
+
+  /* ====== Extra Mobile Fixes ====== */
+@media (max-width: 600px) {
+  /* General layout */
+  .container {
+    width: 94%;
+    padding: 0 12px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Header */
+  .header-inner {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .brand {
+    font-size: 28px;
+  }
+
+  .main-nav {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0 0 0;
+  }
+
+  .main-nav a {
+    display: block;
+    padding: 6px 0;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Hero section */
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 24px 0;
+  }
+
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  .hero-text p {
+    font-size: 18px;
+  }
+
+  .hero-media img {
+    border-radius: 4px;
+  }
+
+  /* Contact section */
+  .contact {
+    grid-template-columns: 1fr;
+    padding: 24px 0;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  /* Partners logos */
+  .logo-row {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .logo-row img {
+    max-height: 48px;
+  }
+
+  /* Footer */
+  .footer-inner {
+    gap: 6px;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
 }
 
